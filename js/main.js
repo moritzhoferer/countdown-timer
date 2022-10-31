@@ -11936,8 +11936,12 @@ if (typeof jQuery === 'undefined') {
 // This is foo
 var isLive = false;
 
+
+// Turn the font color from white to orange as first reminder to come to an end
+var whiteToOrange = 300;
+
 // When to switch from mins to seconds in seconds.
-var minToSeconds = 90;
+var minToSeconds = 60;
 
 // How often to cycle the counter
 // Lowering this below 1000 may cuase issues in Tabbed browsers... ala Chriome,
@@ -12091,10 +12095,15 @@ var countdown = {
 
 		if (seconds >= minToSeconds) {
 			display = minutes;
+			if (seconds < whiteToOrange){
+				$cC.addClass('firstReminder')
+			}
 		} else {
 			display = seconds;
 			if (seconds >= 0) {
 				$cC.addClass('countdown');
+			} else {
+				$cC.addClass('finalReminder')
 			}
 		}
 
@@ -12110,7 +12119,7 @@ var countdown = {
 		var emptyBgColor = '#333333';
 		var fullBgColor  = '#ffffff';
 
-		// when we hit 90 seconds .. fade out the circles.
+		// when we hit 60 seconds .. fade out the circles.
 		if (seconds <= minToSeconds && seconds >= 0) {
 			$('.dot').addClass('dotFade');
 			return;
@@ -12298,8 +12307,11 @@ $(function () {
 // This is foo
 var isLive = false;
 
+// Turn the font color from white to orange as first reminder to come to an end
+var whiteToOrange = 300
+
 // When to switch from mins to seconds in seconds.
-var minToSeconds = 90;
+var minToSeconds = 60;
 
 // How often to cycle the counter
 // Lowering this below 1000 may cuase issues in Tabbed browsers... ala Chriome,
@@ -12453,10 +12465,16 @@ var countdown = {
 
 		if (seconds >= minToSeconds) {
 			display = minutes;
+			if (seconds < whiteToOrange) {
+				$cC.addClass('firstReminder')
+			}
 		} else {
 			display = seconds;
 			if (seconds >= 0) {
 				$cC.addClass('countdown');
+			}
+			else {
+				$cC.addClass('finalReminder')
 			}
 		}
 

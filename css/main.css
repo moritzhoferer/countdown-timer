@@ -9039,8 +9039,16 @@ html,
     line-height: 40vh
 }
 
-#counter-wrapper .countdown {
+#counter-wrapper .firstReminder {
     color: #ffab00
+}
+
+#counter-wrapper .countdown {
+    color: #e62b1e
+}
+
+#counter-wrapper .finalReminder {
+    color: #ffffff
 }
 
 .modal-open,
@@ -9227,7 +9235,7 @@ select,
 
 #overtime {
     display: none;
-    font-color: #fff;
+    font-color: #ffffff;
     font-size: 17vw;
     font-weight: strong;
     position: relative;
